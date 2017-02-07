@@ -1,0 +1,20 @@
+{
+
+  "nodes": [
+      {"id": "Sio", "group": 1},
+      {"id": "Ray", "group": 1},
+      {"id": "Pia", "group": 1},
+      {"id": "Carl", "group": 2}],
+
+  "links": [
+      {"source": "Sio", "target": "Carl", "value": 10},
+      {"source": "Sio", "target": "Ray", "value": 2},
+      {"source": "Sio", "target": "Pia", "value": 2},
+      {"source": "Ray", "target": "Pia", "value": 2},
+      {"source": "Ray", "target": "Sio", "value": 2},
+      {"source": "Carl", "target": "Sio", "value": 10},
+      {"source": "Pia", "target": "Ray", "value": 2},
+      {"source": "Pia", "target": "Sio", "value": 2},
+      {"source": "Ray", "target": "Pia", "value": 2},
+      {"source": "Ray", "target": "Sio", "value": 2}]
+}
