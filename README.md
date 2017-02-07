@@ -9,5 +9,4 @@ Object Oriented Oppression (O3) reveals the conceptual clustering of socio-polit
 
 * Create .json file of sample node data
 * Create 3 edge mappings (race, gender, economic power) 
-* Implement Mike Bostock's D3 force-directed graph: https://bl.ocks.org/mbostock/4062045
-* Include legend
+* Implement Mike Bostock's D3 force-directed graph for all three, with legend: https://bl.ocks.org/mbostock/4062045
