@@ -1,20 +1,42 @@
-{
+
 
   "nodes": [
-      {"id": "Sio", "group": 1},
-      {"id": "Ray", "group": 1},
-      {"id": "Pia", "group": 1},
-      {"id": "Carl", "group": 2}],
+      {"id": "1", "group": 1},
+      {"id": "2", "group": 1},
+      {"id": "3", "group": 1},
+      {"id": "4", "group": 2},
+      {"id": "5", "group": 4},
+      {"id": "6", "group": 4},
+      {"id": "7", "group": 5},
+      {"id": "Test4", "group": 6},
+      {"id": "Test5", "group": 7},
+      {"id": "Test6", "group": 7},
+      {"id": "Test7", "group": 8},
+      {"id": "Test8", "group": 9},
+      {"id": "Test9", "group": 10}
+    ],
 
   "links": [
-      {"source": "Sio", "target": "Carl", "value": 10},
-      {"source": "Sio", "target": "Ray", "value": 2},
-      {"source": "Sio", "target": "Pia", "value": 2},
-      {"source": "Ray", "target": "Pia", "value": 2},
-      {"source": "Ray", "target": "Sio", "value": 2},
-      {"source": "Carl", "target": "Sio", "value": 10},
-      {"source": "Pia", "target": "Ray", "value": 2},
-      {"source": "Pia", "target": "Sio", "value": 2},
-      {"source": "Ray", "target": "Pia", "value": 2},
-      {"source": "Ray", "target": "Sio", "value": 2}]
+      {"source": "1", "target": "4", "value": 1},
+      {"source": "1", "target": "2", "value": 2},
+      {"source": "1", "target": "3", "value": 2},
+      {"source": "2", "target": "3", "value": 2},
+      {"source": "2", "target": "1", "value": 2},
+      {"source": "4", "target": "1", "value": 1},
+      {"source": "3", "target": "2", "value": 2},
+      {"source": "3", "target": "1", "value": 2},
+      {"source": "2", "target": "3", "value": 2},
+      {"source": "2", "target": "1", "value": 2},
+      {"source": "5", "target": "3", "value": 5},
+      {"source": "6", "target": "1", "value": 5},
+      {"source": "7", "target": "1", "value": 21},
+      {"source": "Test4", "target": "4", "value": 21},
+      {"source": "5", "target": "Test4", "value": 21},
+      {"source": "Test5", "target": "3", "value": 5},
+      {"source": "Test6", "target": "1", "value": 5},
+      {"source": "Test7", "target": "1", "value": 21},
+      {"source": "Test8", "target": "4", "value": 21},
+      {"source": "Test9", "target": "Test4", "value": 21}
+
+    ]
 }
