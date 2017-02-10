@@ -5,6 +5,8 @@ Object Oriented Oppression (O3) reveals the conceptual clustering of socio-polit
 
 This project is a collaboration between myself, Ray Gilstrap, and Pia Zargoza, and was inspired by Yerba Buena Center for Arts' civic question, "Can we design freedom?" 
 
+[Interactive Vizualization](https://siokcronin.github.io/O3/)
+
 ![image] (https://cloud.githubusercontent.com/assets/19956669/22711576/91804c36-ed36-11e6-86de-d9fc3dbb852c.png)
 
 ### Design one
