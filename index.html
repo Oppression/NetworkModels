@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <script type='text/javascript' src="//d3js.org/d3.v4.min.js"></script>
   <style>
 
   .links line {
@@ -30,34 +29,36 @@
   ui-widget {
     text-align: left;
   }
+
   </style>
-<body>
-  <div class="title">
-    <h2>Object Oriented Oppression (O3)</h2>
-    <p>Object Oriented Oppression (O3) reveals the conceptual clustering of socio-political categorization,
-      and challenges social hackers to identify possibilities for breaking the social “code” of oppression.</p>
-    <p>This project is a collaboration between Siobhán K Cronin, Ray Gilstrap, and Pia Zargoza,
-      and was inspired by Yerba Buena Center for Arts' civic prompt, "Can we design freedom?"</p>
-    <p>License: This project incorporates code from Mike Bostock’s Block 4062045, released under the GNU General Public License, version 3.</p>
-  </div>
-  <div class="ui-widget">
-    <input id="search">
-    <button type="button" onclick="searchNode()">Search</button>
-  </div>
-</body>
+  <body>
+    <div class="title">
+      <h2>Object Oriented Oppression (O3)</h2>
+      <p>Object Oriented Oppression (O3) reveals the conceptual clustering of socio-political categorization,
+        and challenges social hackers to identify vulnerabilities in the social “code” of oppression.</p>
+      <p>This project is a collaboration between Siobhán K Cronin, Ray Gilstrap, and Pia Zargoza,
+        and was inspired by Yerba Buena Center for Arts' civic question, "Can we design freedom?"</p>
+      <p>License: This project incorporates code from Mike Bostock’s Block 4062045, released under the GNU General Public License, version 3.</p>
+    </div>
+    <div class="ui-widget">
+      <input id="search">
+      <button type="button" onclick="searchNode()">Search</button>
+    </div>
+  </body>
+
   <svg width="960" height="600"></svg>
-  <script type='text/javascript'>
+  <script src="//d3js.org/d3.v4.min.js"></script>
+  <script>
+  var svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
 
-    var svg = d3.select("svg")
-        width = +svg.attr("width")
-        height = +svg.attr("height");
+  var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-    var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function(d) { return d.id; }))
-        .force("charge", d3.forceManyBody())
-        .force("center", d3.forceCenter(width / 2, height / 2));
+  var simulation = d3.forceSimulation()
+      .force("link", d3.forceLink().id(function(d) { return d.id; }))
+      .force("charge", d3.forceManyBody())
+      .force("center", d3.forceCenter(width / 2, height / 2));
 
   d3.json("sample_data.json", function(error, graph) {
     if (error) throw error;
@@ -134,6 +135,7 @@
           source: optArray
       });
   });
+
   function searchNode() {
       //find the node
       var selectedVal = document.getElementById('search').value;
