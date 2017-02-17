@@ -14,3 +14,10 @@ This project is a collaboration between myself, Ray Gilstrap, and Pia Zargoza, a
 * Create .json file of sample node data
 * Create 3 edge mappings (race, gender, economic power) 
 * Implement Mike Bostock's D3 force-directed graph for all three, with legend: https://bl.ocks.org/mbostock/4062045
+
+### Design two
+
+* Force directed graph of user's particular nodes with connection strengths represented as length
+* Histogram of data for each user
+* Generated list of prescriptions for each user based on their top three highest oppression scores 
+* Option to print their visualiation with their resources listed at the bottom 
