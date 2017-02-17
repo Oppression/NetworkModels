@@ -21,33 +21,45 @@
 
   h2 {
     text-align: left;
-    font-size: 2.1em;
+    font-size: 4em;
     font-family: Helvetica;
-    color: black;
+    color: blue;
   }
 
   ui-widget {
     text-align: left;
   }
 
+
+  .bar rect {
+      fill: white;
+  }
+
+  .bar text {
+      fill: #fff;
+          font: 10px sans-serif;
+  }
+
   </style>
   <script src="//d3js.org/d3.v4.min.js"></script>
   <script src="o3.js"></script>
 </head>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
   <body>
     <div class="title">
-      <h2>Object Oriented Oppression (O3)</h2>
-      <p>Object Oriented Oppression (O3) reveals the conceptual clustering of socio-political categorization,
-        and challenges social hackers to identify vulnerabilities in the social “code” of oppression.</p>
-      <p>This project is a collaboration between Siobhán K Cronin, Ray Gilstrap, and Pia Zaragoza,
-        and was inspired by Yerba Buena Center for Arts' civic question, "Can we design freedom?"</p>
-      <p>License: This project incorporates code from Mike Bostock’s Block 4062045, released under the GNU General Public License, version 3.</p>
+      <h2>O3</h2>
+      <p>Object Oriented Oppression (03) challenges social hackers to identify vulnerabilities in the social “code” of oppression.
+      <p>This open source project was initiated by Siobhán K Cronin, Ray Gilstrap, and Pia Zaragoza during Yerba Buena Center for Arts' innaugral fellowship program.</p>
+      <p>Enter your O3 identifcation number to locate your social categorization: </p>
     </div>
     <div class="ui-widget">
       <input id="search">
       <button type="button" id="search_button">Search</button>
     </div>
     <svg width="960" height="600"></svg>
+  <a class="github-button" href="https://github.com/SioKCronin/O3/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/SioKCronin/O3/network" data-count-api="/repos/SioKCronin/O3#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork SioKCronin/O3 on GitHub">Fork</a>
+  <a class="github-button" href="https://github.com/SioKCronin" data-style="mega" data-count-href="/SioKCronin/followers" data-count-api="/users/SioKCronin#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @SioKCronin on GitHub">Follow @SioKCronin</a>
   </body>
   <script type="text/javascript">
     o3.loadData();
