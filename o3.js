@@ -29,15 +29,18 @@ o3.loadData = function() {
         .selectAll("circle")
         .data(graph.nodes)
         .enter().append("circle")
-        .attr("r", 10)
+        .attr("r", function(d) {
+          return d.value / 8;
+        })
         .attr("fill", function(d) {
           return color(d.group);
         })
        .call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-            // .on('dblclick', connectedNodes)); //Added code
+              .on("start", dragstarted)
+              .on("drag", dragged)
+              .on("end", dragended))
+              .on('dblclick', connectedNodes); //Added code ;
+              // .on('dblclick', connectedNodes)); //Added code
 
     node.append("title")
         .text(function(d) { return d.id; });
@@ -74,7 +77,7 @@ o3.loadData = function() {
 
     svg.append("defs").selectAll("marker")
         .data(["suit", "licensing", "resolved"])
-      .enter().append("marker")
+        .enter().append("marker")
         .attr("id", function(d) { return d; })
         .attr("viewBox", "0 -5 10 10")
         .attr("refX", 25)
@@ -82,10 +85,45 @@ o3.loadData = function() {
         .attr("markerWidth", 6)
         .attr("markerHeight", 6)
         .attr("orient", "auto")
-      .append("path")
+        .append("path")
         .attr("d", "M0,-5L10,0L0,5 L10,0 L0, -5")
         .style("stroke", "#4679BD")
-        .style("opacity", "0.6");
+        .style("opacity", "0.9");
+
+    //Toggle stores whether the highlighting is on
+    var toggle = 0;
+
+    //Create an array logging what is connected to what
+    var linkedByIndex = {};
+    for (i = 0; i < graph.nodes.length; i++) {
+        linkedByIndex[i + "," + i] = 1;
+    };
+    graph.links.forEach(function (d) {
+        linkedByIndex[d.source.index + "," + d.target.index] = 1;
+    });
+    //This function looks up whether a pair are neighbours
+    function neighboring(a, b) {
+        return linkedByIndex[a.index + "," + b.index];
+    }
+    function connectedNodes() {
+        if (toggle == 0) {
+            //Reduce the opacity of all but the neighbouring nodes
+            d = d3.select(this).node().__data__;
+            node.style("opacity", function (o) {
+                return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
+            });
+            link.style("opacity", function (o) {
+                return d.index==o.source.index | d.index==o.target.index ? 1 : 0.1;
+            });
+            //Reduce the op
+            toggle = 1;
+        } else {
+            //Put them back to opacity=1
+            node.style("opacity", 1);
+            link.style("opacity", 1);
+            toggle = 0;
+        }
+    }
 
 
   }
@@ -107,6 +145,19 @@ o3.loadData = function() {
     d.fy = null;
   }
 
+
+  var optArray = [];
+  for (var i = 0; i < graph.nodes.length - 1; i++) {
+      optArray.push(graph.nodes[i].name);
+  }
+
+  optArray = optArray.sort();
+  $(function () {
+      $("#search").autocomplete({
+          source: optArray
+      });
+  });
+
   function searchNode() {
       //find the node
       var selectedVal = document.getElementById('search').value;
@@ -125,60 +176,6 @@ o3.loadData = function() {
               .style("opacity", 1);
       }
   }
-
       d3.select("#search_button")
       .on("click", searchNode);
-}
-
-function buildControls(laborTypes) {
-// Build radio dial buttons
-      var labels = d3.select('.sidebar')
-               .append('div')
-               .attr('class','labor-types')
-               .selectAll('label')
-               .data(laborTypes)
-               .enter()
-               .append('label')
-               .attr('class', 'radio-inline');
-
-      labels.append('input')
-            .attr('type', 'radio')
-      .attr('name', 'labor-type')
-            .attr('id', function(d) { return d.key; })
-      .on('click', showDescription);
-
-      labels.append('span').html(function(d) { return d.name; });
-
-      d3.select('div.labor-types').append('button')
-                            .attr('name', 'select_type')
-                            .attr('class', 'btn btn-success')
-                            .html('Play')
-                            .on('click', play);
-
-      // Choose the first labor type
-      d3.select('input[name="labor-type"]:first-child')
-        .attr('checked', true)
-        .each(
-          function(d) {
-            var clickFunction = d3.select(this).on('click');
-            clickFunction.apply(this, [d]);
-          }
-        );
-
-      // Define what happens when user clicks 'Play' button
-      function play(d) {
-        var that = this; // Access original value in local scope
-
-        function finish() {
-          $(that).prop("disabled", false) // Enable 'Play' button
-        }
-        $(this).prop("disabled", true) // Disable 'Play' button
-
-        var laborType = d3.select('input[name="labor-type"]:checked')
-                          .data()[0].key;
-
-        projectByType(laborType, finish);
-
-      }
-
 }
