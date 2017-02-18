@@ -1,0 +1,17 @@
+
+{
+  "categories": [
+      {"letter": "AfricanAmerican", "frequency": 32},
+      {"letter": "Asian", "frequency": 10},
+      {"letter": "Latino/a", "frequency": 20},
+      {"letter": "American Indian", "frequency": 18},
+      {"letter": "White", "frequency": 15},
+      {"letter": "Male", "frequency": 70},
+      {"letter": "Female", "frequency": 64},
+      {"letter": "Trans/NB", "frequency": 20},
+      {"letter": "Lesbian", "frequency": 15},
+      {"letter": "Gay", "frequency": 25},
+      {"letter": "Bisexual", "frequency": 19},
+      {"letter": "Person with a disability", "frequency": 28}
+    ]
+}

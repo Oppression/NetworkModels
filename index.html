@@ -72,21 +72,30 @@
     <div class="title">
       <h2>O3</h2>
       <p>Welcome to the 03 (Object Oriented Oppression) laboratory.</p>
-      <form action="/data.php">
+      <form action="/o3.py">
         ID number: <input type="text" name="fname"><br>
         Will you be tithing in our O3 economy?
-        <input type="checkbox" name="tithe" value="True"> Yes<input type="checkbox" name="tithe" value="False">No<br>
-        Zootpia<input type="range" name="points" min="1" max="10">Animal Farm<br>
-        Our cookies<input type="range" name="points" min="1" max="10">My cookies<br>
-        Check all that apply:
-        <input type="checkbox" name="category" value="AfricanAmerican">African-American &nbsp &nbsp <input type="checkbox" name="category" value="Asian">Asian &nbsp &nbsp <input type="checkbox" name="category" value="Latino/a">Latino/a &nbsp &nbsp
-        <input type="checkbox" name="category" value="American Indian">American Indian &nbsp &nbsp <input type="checkbox" name="category" value="White">White &nbsp &nbsp <input type="checkbox" name="category" value="Male">Male &nbsp &nbsp <input type="checkbox" name="category" value="Trans/NB">Trans/NB &nbsp &nbsp
-        <input type="checkbox" name="category" value="Lesbian">Lesbian &nbsp &nbsp <input type="checkbox" name="category" value="Gay">Gay &nbsp &nbsp  <input type="checkbox" name="category" value="Female">Female<br>
+        <input type="radio" name="tithe" value="True"> Yes
+        <input type="radio" name="tithe" value="False"> No<br>
+        Zootpia<input type="range" name="points1" min="0" max="9">Animal Farm<br>
+        Our cookies<input type="range" name="points2" min="0" max="9">My cookies<br>
+        Select of your identies to root for today:<br>
+        <input type="radio" name="category" value="0" checked>AfricanAmerican &nbsp &nbsp
+        <input type="radio" name="category" value="10"> Asian &nbsp &nbsp
+        <input type="radio" name="category" value="20"> Latino/a &nbsp &nbsp
+        <input type="radio" name="category" value="30"> American Indian &nbsp &nbsp
+        <input type="radio" name="category" value="40"> White &nbsp &nbsp
+        <input type="radio" name="category" value="50"> Male &nbsp &nbsp
+        <input type="radio" name="category" value="60"> Female &nbsp &nbsp
+        <input type="radio" name="category" value="70"> Trans/NB &nbsp &nbsp
+        <input type="radio" name="category" value="80"> Lesbian &nbsp &nbsp
+        <input type="radio" name="category" value="90"> Gay &nbsp &nbsp
+        <input type="radio" name="category" value="100"> Bisexual &nbsp &nbsp
         <input type="submit" value="Submit">
       </form>
-      <p>Your wealth will accumulate every 10 minutes, which will advance your social category's position in the economy.</p>
+      <p>This chart will update every 10 minutes, and your wealth will accumulate.</p>
       <p>If you chose to tithe, your surplus will be shared with other social categories, and your generosity will be remembered.</p
-      <p>Check back in today to see if we've maintained equity or launched a revolution!</p>
+      <p>Check back in today to see if we've maintained equity or reached the point of revolution!</p>
     </div>
     <svg width="1200" height="600">
     </svg>
