@@ -30,6 +30,10 @@
     text-align: left;
   }
 
+  .node text {
+    pointer-events: none;
+    font: 10px sans-serif;
+  }
 
   .bar rect {
       fill: white;
@@ -50,23 +54,28 @@
   <script src="o3.js"></script>
 </head>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script type='text/javascript' src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"> </script>
-  <script type='text/javascript' src="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> </script>
   <script type='text/javascript' src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"> </script>
   <body>
     <div class="title">
       <h2>O3</h2>
-      <p>Object Oriented Oppression (03) challenges social hackers to identify vulnerabilities in the social “code” of oppression.
-      <p>This open source project was initiated by Siobhán K Cronin, Ray Gilstrap, and Pia Zaragoza during Yerba Buena Center for Arts' innaugral fellowship program, and models a relative oppression structure based on annual salary data taken from the 2012 Economic Census of the US Bureau of Labor Statistics.</p>
-      <p>The size of the circle reflects its relative oppression (the bigger the circle, the greater the oppression)</p>
+      <p>Welcome to the 03 (Object Oriented Oppression) laboratory.</p>
+      <form action="/data.php">
+        ID number: <input type="text" name="fname"><br>
+        Will you be tithing to ensure a fair economy?
+        <input type="checkbox" name="vehicle1" value="Bike"> Yes<input type="checkbox" name="vehicle2" value="Car">No<br>
+        If tithing, what percentage of your wealth (1-10%)?<input type="range" name="points" min="1" max="10">
+        <input type="submit" value="Submit">
+      </form>
+      <p>The size of the circle reflects the wealth of each participant, calculated as a product of when they were "born" in our study.</p>
+      <p>Wealth will continue to accumulate each generation (until the revolution), unless you chose to tithe your wealth, which will be remembered during the uprising.</p
       <p>Arrows reflect the direction of relative oppression.</p>
-      <p>Double click to fade out all but category's immediate neighbours. Double-click to bring them back again.</p>
-      <p>How would you break this model?</p>
+      <p>Check back in today to see if we've maintained peace or required a revolution!</p>
     </div>
-    <svg width="1200" height="600"></svg>
-  <a class="github-button" href="https://github.com/SioKCronin/O3/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/SioKCronin/O3/network" data-count-api="/repos/SioKCronin/O3#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork SioKCronin/O3 on GitHub">Fork</a>
-  <a class="github-button" href="https://github.com/SioKCronin" data-style="mega" data-count-href="/SioKCronin/followers" data-count-api="/users/SioKCronin#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @SioKCronin on GitHub">Follow @SioKCronin</a>
+    <svg width="1200" height="600">
+    </svg>
+    <marquee>O3ID#-1: I believe the children are our future. Teach them well, and let them lead the way.</marquee>
+    <a class="github-button" href="https://github.com/SioKCronin/O3/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/SioKCronin/O3/network" data-count-api="/repos/SioKCronin/O3#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork SioKCronin/O3 on GitHub">Fork</a>
+    <a class="github-button" href="https://github.com/SioKCronin" data-style="mega" data-count-href="/SioKCronin/followers" data-count-api="/users/SioKCronin#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @SioKCronin on GitHub">Follow @SioKCronin</a>
   </body>
   <script type="text/javascript">
     o3.loadData();

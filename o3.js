@@ -5,6 +5,12 @@ o3.loadData = function() {
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
+  // var force = d3.layout.force()
+  //     .gravity(0.05)
+  //     .distance(100)
+  //     .charge(-100)
+  //     .size([width, height]);
+
   var color = d3.scaleOrdinal(d3.schemeCategory20);
 
   var simulation = d3.forceSimulation()
@@ -30,7 +36,7 @@ o3.loadData = function() {
         .data(graph.nodes)
         .enter().append("circle")
         .attr("r", function(d) {
-          return d.value / 8;
+         return d.value / 8;
         })
         .attr("fill", function(d) {
           return color(d.group);
@@ -39,8 +45,23 @@ o3.loadData = function() {
               .on("start", dragstarted)
               .on("drag", dragged)
               .on("end", dragended))
-              .on('dblclick', connectedNodes); //Added code ;
-              // .on('dblclick', connectedNodes)); //Added code
+              .on('dblclick', connectedNodes);
+
+    node.append("text")
+      .attr("dx", 12)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.id });
+    //
+    // force.on("tick", function() {
+    //   link.attr("x1", function(d) { return d.source.x; })
+    //       .attr("y1", function(d) { return d.source.y; })
+    //       .attr("x2", function(d) { return d.target.x; })
+    //       .attr("y2", function(d) { return d.target.y; });
+    // });
+    //
+    // node.attr("transform", function(d) {
+    //   return "translate(" + d.x + "," + d.y + ")";
+    // });
 
     node.append("title")
         .text(function(d) { return d.id; });
@@ -75,6 +96,7 @@ o3.loadData = function() {
         });
     });
 
+    //Apply force arrows
     svg.append("defs").selectAll("marker")
         .data(["suit", "licensing", "resolved"])
         .enter().append("marker")
@@ -88,11 +110,10 @@ o3.loadData = function() {
         .append("path")
         .attr("d", "M0,-5L10,0L0,5 L10,0 L0, -5")
         .style("stroke", "#4679BD")
-        .style("opacity", "0.9");
+        .style("opacity", "0.6");
 
     //Toggle stores whether the highlighting is on
     var toggle = 0;
-
     //Create an array logging what is connected to what
     var linkedByIndex = {};
     for (i = 0; i < graph.nodes.length; i++) {
@@ -124,8 +145,6 @@ o3.loadData = function() {
             toggle = 0;
         }
     }
-
-
   }
 
   function dragstarted(d) {
@@ -144,38 +163,4 @@ o3.loadData = function() {
     d.fx = null;
     d.fy = null;
   }
-
-
-  var optArray = [];
-  for (var i = 0; i < graph.nodes.length - 1; i++) {
-      optArray.push(graph.nodes[i].name);
-  }
-
-  optArray = optArray.sort();
-  $(function () {
-      $("#search").autocomplete({
-          source: optArray
-      });
-  });
-
-  function searchNode() {
-      //find the node
-      var selectedVal = document.getElementById('search').value;
-      var node = svg.selectAll(".node circle");
-      if (selectedVal == "none") {
-          node.style("stroke", "white").style("stroke-width", "1");
-      } else {
-          var selected = node.filter(function (d, i) {
-              return d.id != selectedVal;
-          });
-          selected.style("opacity", "0");
-          var link = svg.selectAll(".link")
-          link.style("opacity", "0");
-          d3.selectAll(".node, .link").transition()
-              .duration(5000)
-              .style("opacity", 1);
-      }
-  }
-      d3.select("#search_button")
-      .on("click", searchNode);
 }
