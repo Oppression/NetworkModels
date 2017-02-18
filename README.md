@@ -1,7 +1,7 @@
 # O3 (Object Oriented Oppression) 
 
 ### Summary 
-Object Oriented Oppression (O3) reveals the conceptual clustering of socio-political categorization, and challenges social hackers to identify vulnerabilities in the social “code” of oppression. This hands-on installation hijacks the paradigm of object-oriented programming to describe and enable the disruption of systems of oppression.
+Object Oriented Oppression (O3) challenges social hackers to identify vulnerabilities in the social “code” of oppression. This hands-on installation hijacks the paradigm of object-oriented programming to describe and enable the disruption of systems of oppression.
 
 This project is a collaboration between myself, Ray Gilstrap, and Pia Zargoza, and was inspired by Yerba Buena Center for Arts' civic question, "Can we design freedom?" 
 
