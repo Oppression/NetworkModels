@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+  .bar {
+  fill: steelblue;
+  }
+
+  .bar:hover {
+    fill: brown;
+  }
+
+  .axis--x path {
+    display: none;
+  }
+
+  .links line {
+    stroke: #999;
+    stroke-opacity: 0.7;
+  }
+
+  .nodes circle {
+    stroke: #fff;
+    stroke-width: 3px;
+  }
+
+  body {
+    font-family: Helvetica;
+    background-color: #ece7f2;
+  }
+
+  h2 {
+    text-align: left;
+    font-size: 4em;
+    font-family: Helvetica;
+    color: blue;
+  }
+
+  ui-widget {
+    text-align: left;
+  }
+
+  .node text {
+    pointer-events: none;
+    font: 10px sans-serif;
+  }
+
+  .bar rect {
+      fill: white;
+  }
+
+  .bar text {
+      fill: #fff;
+          font: 10px sans-serif;
+  }
+
+  d3-tip {
+    line-height: 1;
+    color: black;
+  }
+
+  </style>
+  <script src="//d3js.org/d3.v4.min.js"></script>
+  <script src="o3.js"></script>
+  <script src="bar_chart.js"></script>
+</head>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script type='text/javascript' src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"> </script>
+  <body>
+    <div class="title">
+      <h2>O3</h2>
+      <p>Welcome to the 03 (Object Oriented Oppression) laboratory.</p>
+      <p>Please enter your ID here to check your current freedom score</p>
+      <p></p>
+      <form action="/backend/o3.py">
+        ID number: <input type="text" name="label"><br>
+	<input type=hidden name=check value="1">
+        <input type="submit" value="Submit">
+      </form>
+      <p>Check back in today to see if we've maintained equity or reached the point of revolution!</p>
+    </div>
+    <svg width="1200" height="600">
+    </svg>
+    <marquee>ID#1: I believe the children are our future. Teach them well, and let them lead the way.</marquee>
+    <a class="github-button" href="https://github.com/SioKCronin/O3/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/SioKCronin/O3/network" data-count-api="/repos/SioKCronin/O3#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork SioKCronin/O3 on GitHub">Fork</a>
+    <a class="github-button" href="https://github.com/SioKCronin" data-style="mega" data-count-href="/SioKCronin/followers" data-count-api="/users/SioKCronin#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @SioKCronin on GitHub">Follow @SioKCronin</a>
+  </body>
+  <script type="text/javascript">
+    // o3.loadData();
+    bar_chart.loadData();
+  </script>
+</html>
