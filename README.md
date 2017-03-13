@@ -7,7 +7,7 @@ Object Oriented Oppression (O3) is a research and civic hacking project that cha
 
 ### IMAGES from 2017 YBCA Forum 
 
-![image] (https://cloud.githubusercontent.com/assets/19956669/23871767/fbbc52f8-07e8-11e7-88d0-b21698833c1a.jpg)
+![image] (https://cloud.githubusercontent.com/assets/19956669/23872359/42e5f826-07eb-11e7-95e1-8613c0e24ef9.JPG)
 
 
 
